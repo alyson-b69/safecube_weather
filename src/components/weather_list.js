@@ -21,7 +21,7 @@ const WeatherList = (props) => {
     <section className="weatherContainer">
       {props.weather.map((cityData) => {
         return (
-          <Container className="mt-3 mb-2">
+          <div className="mt-3 mb-2">
             <h3>{cityData.city.name}</h3>
             <CardDeck>
               {cityData.list
@@ -40,7 +40,7 @@ const WeatherList = (props) => {
                     </li>
                     <li>
                       <FaTemperatureHigh className="mr-1" fontSize="1.5em" />
-                      {item.main.temp} °Cel
+                      {item.main.temp} °C
                     </li>
                     <li>
                       <WiHumidity className="mr-1" fontSize="1.8em" />
@@ -62,7 +62,7 @@ const WeatherList = (props) => {
                   </Card>
                 ))}
             </CardDeck>
-          </Container>
+          </div>
         );
       })}
     </section>

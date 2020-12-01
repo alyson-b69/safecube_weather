@@ -89,8 +89,8 @@ li.strong {
 
 .btn-primary {
   color: #fff;
-  background-color: #282c34;
-  box-shadow: 0 0 #282c34;
+  background-color: #000;
+  box-shadow: 0 0 #000;
   outline: none;
   border: none;
   transition: all 0.4s ease-in-out;
@@ -117,4 +117,16 @@ li.strong {
   background: #282c34;
   border-color: #4aee21bd;
   box-shadow: none;
+}
+
+.weatherContainer h3 {
+  margin-bottom: 3%;
+  background: #000;
+  color: #fff;
+  padding: 1%;
+  border-radius: 10px;
+}
+
+section.weatherContainer > div {
+  margin-bottom: 5% !important;
 }
