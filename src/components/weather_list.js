@@ -19,7 +19,6 @@ const WeatherList = (props) => {
 
   return (
     <section className="weatherContainer">
-      <h1>Meteo</h1>
       {props.weather.map((cityData) => {
         return (
           <div className="mt-3 mb-2">
