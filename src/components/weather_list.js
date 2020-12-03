@@ -21,7 +21,7 @@ const WeatherList = (props) => {
     <section className="weatherContainer">
       {props.weather.map((cityData) => {
         return (
-          <div className="mt-3 mb-2" key={cityData.city.name}>
+          <div className="mt-3 mb-2" key={cityData.city.name + new Date()}>
             <h3>{cityData.city.name}</h3>
             <CardDeck>
               {cityData.list
@@ -29,6 +29,7 @@ const WeatherList = (props) => {
                 .map((item) => (
                   <Card
                     className="card"
+                    key={cityData.city.name + item.dt}
                     onClick={() => {
                       alert(
                         "Héhé, il n'y a rien de plus à afficher pour le moment ;)"

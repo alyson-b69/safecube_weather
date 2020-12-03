@@ -12,7 +12,6 @@ const SearchBar = (props) => {
 
   const cityFormSubmit = (e) => {
     e.preventDefault();
-
     props.fetchWeather(inputCity);
     setInputCity("");
   };
@@ -28,6 +27,7 @@ const SearchBar = (props) => {
             className="mb-2"
             id="inlineFormInputCity"
             placeholder="Type any city to get a weather"
+            value={inputCity}
             onChange={handleInputcityChange}
           />
         </Col>
