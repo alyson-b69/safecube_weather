@@ -3,7 +3,7 @@ import { takeLatest, all, call, put } from "redux-saga/effects";
 import axios from "axios";
 
 const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
-const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
+const ROOT_URL = `https://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
 
 function fetchWeather(city) {
   const url = `${ROOT_URL}&q=${city}&units=metric`;
