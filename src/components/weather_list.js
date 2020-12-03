@@ -14,7 +14,7 @@ import { WiHumidity } from "react-icons/wi";
 
 const WeatherList = (props) => {
   useEffect(() => {
-    props.fetchWeather("lyon");
+    props.fetchWeather("69007");
   }, []);
 
   return (
