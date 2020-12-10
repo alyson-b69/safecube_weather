@@ -19,7 +19,7 @@ const WeatherList = (props) => {
 
   return (
     <section className="weatherContainer">
-      {props.weather.map((cityData) => {
+      {props.weather.results.map((cityData) => {
         return (
           <div className="mt-3 mb-2" key={cityData.city.name + new Date()}>
             <h3>{cityData.city.name}</h3>
