@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 
 import createSagaMiddleware from "redux-saga";
 import { watcherSagas } from "./sagas/weather_saga";
@@ -14,7 +14,11 @@ import "./assets/styles/Custom.scss";
 import reducers from "./reducers";
 
 const sagaMiddleware = createSagaMiddleware();
-const store = createStore(reducers, applyMiddleware(Log, sagaMiddleware));
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(
+  reducers,
+  /* preloadedState, */ composeEnhancers(applyMiddleware(Log, sagaMiddleware))
+);
 
 sagaMiddleware.run(watcherSagas);
 
