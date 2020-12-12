@@ -26,18 +26,15 @@ const WeatherList = ({ weather, fetchInitialWeather }) => {
   }, []);
 
   const weatherList = weather.results;
+  useEffect(() => {
+    console.log("List change : ", weatherList);
+  }, [weatherList]);
 
   return (
     <section className="weatherContainer">
-      {weatherList.map((cityData, i) => {
-        console.log(i, "citdyData:", cityData);
+      {weatherList.map((cityData) => {
         return (
-          <div
-            className="mt-3 mb-2"
-            key={
-              weather.isLoading ? "loading" : cityData.city.name + new Date()
-            }
-          >
+          <div className="mt-3 mb-2" key={cityData.city.name + new Date()}>
             <h3>{weather.isLoading ? "Loading ... " : cityData.city.name}</h3>
             <CardDeck>
               {weather.isLoading ? (

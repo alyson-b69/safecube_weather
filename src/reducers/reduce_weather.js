@@ -9,6 +9,7 @@ import {
 
 const initialState = {
   isLoading: false,
+  isFirstLoading: false,
   searchTerm: null,
   results: [],
   errors: [],
@@ -19,21 +20,21 @@ const reduce_weather = (state = initialState, action) => {
     case FETCH_INITIAL_WEATHER_REQUEST:
       return {
         ...state,
-        isLoading: true,
+        isFirstLoading: true,
         searchTerm: action.payload.city,
       };
 
     case FETCH_INITIAL_WEATHER_SUCCESS:
       return {
         ...state,
-        isLoading: false,
+        isFirstLoading: false,
         results: [action.payload.response.data, ...state.results],
       };
 
     case FETCH_INITIAL_WEATHER_FAILED:
       return {
         ...state,
-        isLoading: false,
+        isFirstLoading: false,
         errors: [action.payload.error, ...state.errors],
       };
 
