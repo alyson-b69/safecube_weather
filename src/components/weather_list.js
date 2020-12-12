@@ -13,12 +13,12 @@ import {
 import { WiHumidity } from "react-icons/wi";
 import Placeholder from "./Placeholder";
 
-const WeatherList = ({ weather, fetchWeather }) => {
+const WeatherList = ({ weather, fetchInitialWeather }) => {
   const initialFetch = () => {
-    fetchWeather("69007");
-    fetchWeather("Lisboa");
-    fetchWeather("London");
-    fetchWeather("Berlin");
+    fetchInitialWeather("69007");
+    fetchInitialWeather("Lisboa");
+    fetchInitialWeather("London");
+    fetchInitialWeather("Berlin");
   };
 
   useEffect(() => {
