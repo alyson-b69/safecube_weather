@@ -28,16 +28,13 @@ const WeatherCard = () => {
 
 const Placeholder = () => {
   return (
-    <div className="mt-3 mb-2">
-      <h3>Loading ...</h3>
-      <CardDeck>
-        <WeatherCard />
-        <WeatherCard />
-        <WeatherCard />
-        <WeatherCard />
-        <WeatherCard />
-      </CardDeck>
-    </div>
+    <>
+      <WeatherCard />
+      <WeatherCard />
+      <WeatherCard />
+      <WeatherCard />
+      <WeatherCard />
+    </>
   );
 };
 
