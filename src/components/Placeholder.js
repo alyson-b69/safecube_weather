@@ -1,5 +1,5 @@
 import React from "react";
-import { CardDeck, Card } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import { FaTemperatureHigh, FaSun } from "react-icons/fa";
 import { WiHumidity } from "react-icons/wi";
 

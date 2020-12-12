@@ -32,12 +32,16 @@ const WeatherList = ({ weather, fetchInitialWeather }) => {
 
   return (
     <section className="weatherContainer">
-      {weatherList.map((cityData) => {
+      {weatherList.map((cityData, i) => {
         return (
           <div className="mt-3 mb-2" key={cityData.city.name + new Date()}>
-            <h3>{weather.isLoading ? "Loading ... " : cityData.city.name}</h3>
+            <h3>
+              {weather.isLoading && i === 0
+                ? "Loading ... "
+                : cityData.city.name}
+            </h3>
             <CardDeck>
-              {weather.isLoading ? (
+              {weather.isLoading && i === 0 ? (
                 <Placeholder />
               ) : (
                 cityData.list
