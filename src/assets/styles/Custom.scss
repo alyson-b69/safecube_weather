@@ -127,6 +127,38 @@ li.strong {
   border-radius: 10px;
 }
 
+.card.loading {
+  background-color: #dedede49;
+  animation-name: loading;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes loading {
+  0% {
+    background-color: #dedede;
+  }
+  50% {
+    background-color: #dedede49;
+  }
+  100% {
+    background-color: #dedede;
+  }
+}
+
+@keyframes loading {
+  0% {
+    background-color: #dedede;
+  }
+  50% {
+    background-color: #dedede49;
+  }
+  100% {
+    background-color: #dedede;
+  }
+}
+
 section.weatherContainer > div {
   margin-bottom: 5% !important;
 }

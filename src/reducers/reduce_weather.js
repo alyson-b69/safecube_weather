@@ -26,6 +26,7 @@ const reduce_weather = (state = initialState, action) => {
             ? [action.payload.response.data, ...state.results]
             : state.results,
       };
+
     case FETCH_WEATHER_FAILED:
       return {
         ...state,
