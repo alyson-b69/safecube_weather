@@ -14,9 +14,15 @@ import { WiHumidity } from "react-icons/wi";
 import Placeholder from "./Placeholder";
 
 const WeatherList = ({ weather, fetchWeather }) => {
-  useEffect(() => {
+  const initialFetch = () => {
     fetchWeather("69007");
-    fetchWeather("Paris");
+    fetchWeather("Lisboa");
+    fetchWeather("London");
+    fetchWeather("Berlin");
+  };
+
+  useEffect(() => {
+    initialFetch();
   }, []);
 
   return (

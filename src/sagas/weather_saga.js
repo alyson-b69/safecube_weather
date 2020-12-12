@@ -1,5 +1,5 @@
 import { FETCH_WEATHER_REQUEST, FETCH_WEATHER_SUCCESS } from "../actions/index";
-import { all, call, put, takeLatest } from "redux-saga/effects";
+import { all, call, put, takeEvery } from "redux-saga/effects";
 import axios from "axios";
 import { FETCH_WEATHER_FAILED } from "../actions";
 
@@ -24,5 +24,5 @@ export function* fetchWeatherSaga(action) {
 }
 
 export function* watcherSagas() {
-  yield all([yield takeLatest(FETCH_WEATHER_REQUEST, fetchWeatherSaga)]);
+  yield all([yield takeEvery(FETCH_WEATHER_REQUEST, fetchWeatherSaga)]);
 }
