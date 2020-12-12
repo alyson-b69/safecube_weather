@@ -6,7 +6,7 @@ import {
   FETCH_WEATHER_SUCCESS,
   FETCH_WEATHER_FAILED,
 } from "../actions/index";
-import { all, call, put, takeEvery, takeLatest } from "redux-saga/effects";
+import { call, put, takeEvery, takeLatest } from "redux-saga/effects";
 import axios from "axios";
 
 const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
@@ -47,8 +47,6 @@ export function* fetchWeatherSaga(action) {
 }
 
 export function* watcherSagas() {
-  yield all([
-    yield takeEvery(FETCH_INITIAL_WEATHER_REQUEST, fetchInitialWeatherSaga),
-  ]);
-  yield all([yield takeLatest(FETCH_WEATHER_REQUEST, fetchWeatherSaga)]);
+  yield takeEvery(FETCH_INITIAL_WEATHER_REQUEST, fetchInitialWeatherSaga);
+  yield takeLatest(FETCH_WEATHER_REQUEST, fetchWeatherSaga);
 }

@@ -48,7 +48,10 @@ const reduce_weather = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        results: [action.payload.response.data, ...state.results],
+        results:
+          action.payload.searchTerm === state.searchTerm
+            ? [action.payload.response.data, ...state.results]
+            : state.results,
       };
 
     case FETCH_WEATHER_FAILED:
